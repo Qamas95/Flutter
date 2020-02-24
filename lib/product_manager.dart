@@ -8,8 +8,6 @@ class ProductManager extends StatefulWidget {
     print('[ProductManager Widget] Constructor');
   }
 
-
-
   @override
   State<StatefulWidget> createState() {
       print('[ProductManager Widget] createState()');
