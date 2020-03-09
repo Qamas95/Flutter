@@ -64,7 +64,10 @@ class _MyAppState extends State<MyApp> {
               return Answer(_answerQuestion, answer);
             }).toList()
           ],
-        ) : Center(child: Text('You did it!')),
+        )
+        : Center(
+          child: Text('You did it'),
+        ),
       ),
     );
   }
