@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 class NewTransaction extends StatefulWidget {
@@ -22,10 +24,12 @@ class _NewTransactionState extends State<NewTransaction> {
       return;
     }
 
+
     widget.addTx(
       enteredTitle,
       enteredAmount,
     );
+   // Navigator.of(context).pop();  // Not working ;/ should close window of enter values after click ok, but needs to click add transactions
   }
 
   @override
