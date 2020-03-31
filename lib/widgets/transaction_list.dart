@@ -43,11 +43,7 @@ class TransactionList extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       transactions[index].title,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Colors.redAccent,
-                      ),
+                      style: Theme.of(context).textTheme.title, 
                     ),
                     Text(
                       DateFormat.jms().format(transactions[index].date),
