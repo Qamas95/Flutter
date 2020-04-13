@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class NewTransaction extends StatefulWidget {
@@ -24,12 +22,11 @@ class _NewTransactionState extends State<NewTransaction> {
       return;
     }
 
-
     widget.addTx(
       enteredTitle,
       enteredAmount,
     );
-   // Navigator.of(context).pop();  // Not working ;/ should close window of enter values after click ok, but needs to click add transactions
+    // Navigator.of(context).pop();  // Not working ;/ should close window of enter values after click ok, but needs to click add transactions
   }
 
   @override
@@ -58,9 +55,28 @@ class _NewTransactionState extends State<NewTransaction> {
               //   amountInput = val;
               // },
             ),
-            FlatButton(
+            Container(
+              height: 70,
+              child: Row(
+                children: <Widget>[
+                  Text('No Date Chosen!'),
+                  FlatButton(
+                    textColor: Theme.of(context).primaryColor,
+                    onPressed: () {},
+                    child: Text(
+                      'Choose Date',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            RaisedButton(
               child: Text('Add Transaction'),
-              textColor: Colors.purple,
+              color: Theme.of(context).primaryColor,
+              textColor: Theme.of(context).textTheme.button.color,
               onPressed: submitData,
             ),
           ],
