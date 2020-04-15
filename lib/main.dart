@@ -71,7 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
     }).toList();
   }
 
-  void _addNewTransaction(String txTitle, double txAmount, DateTime chosenDate) {
+  void _addNewTransaction(
+      String txTitle, double txAmount, DateTime chosenDate) {
     final newTx = Transaction(
       title: txTitle,
       amount: txAmount,
@@ -83,15 +84,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-
   void _deleteTransaction(String id) {
-      setState(() {
-        _userTransactions.removeWhere((tx) {
-          return tx.id == id;
-        });
+    setState(() {
+      _userTransactions.removeWhere((tx) {
+        return tx.id == id;
       });
+    });
   }
-  // or I can do: , its the same what above could be used with 1 expression 
+  // or I can do: , its the same what above could be used with 1 expression
   // void _deleteTransaction(String id) {
   //      setState(() {
   //       _userTransactions.removeWhere((tx) =>
@@ -134,7 +134,9 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Chart(_recenTransactions),
-            TransactionList(_userTransactions, _deleteTransaction),
+            Expanded(
+              child: TransactionList(_userTransactions, _deleteTransaction),
+            ),
           ],
         ),
       ),
